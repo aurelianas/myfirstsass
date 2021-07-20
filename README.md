@@ -1,2 +1,2 @@
 # Sass
-My first Sass project d
+My first Sass project
