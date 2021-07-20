@@ -1,0 +1,256 @@
+@import 'variables';
+@import 'mixins';
+@import 'breakpoints';
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1;
+    color: $textColor;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    p {
+        line-height: 1.2;
+    }
+
+}
+
+h1 {
+    @include firstHeading();
+}
+
+a {
+    color: $brandColor;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $altBrandColor;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.pane_inner,
+.container {
+    @include container();
+}
+
+.pane--header {
+    background-color: $black;
+    position: relative;
+
+    @include media("<=phone") {
+        .pane_inner {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 50px;
+        }
+    }
+}
+
+.nav--header {
+    @include media("<=phone") {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $black;
+        display: none;
+
+        &.js--show {
+            display: block;
+        }
+    }
+
+    ul {
+        @include listReset();
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 1px solid $white;
+
+        @include media("<=phone") {
+            flex-direction: column;
+            border-left: none;
+        }
+    }
+
+    li {
+        border-right: 1px solid $white;
+
+        @include media("<=phone") {
+            border-top: 1px solid $white;
+            border-right: none;
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 2.2rem;
+        color: $white;
+        padding: 20px;
+        font-weight: 700;
+        text-align: center;
+
+        &:hover {
+            background-color: $brandColor;
+        }
+    }
+}
+
+.module-toggle-menu {
+    display: none;
+
+    @include media("<=phone") {
+        display: block;
+    }
+}
+
+.module-toggle-menu_button {
+    @include resetButton();
+    color: $white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.pane--banner {
+    background-color: $darkGrey;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.pane--banner h1 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+main {
+    flex: 1;
+}
+
+.pane--content .pane_inner {
+    @include noContainer();
+}
+
+.pane--content .module {
+    @include modulePadd();
+}
+
+.pane--content .module_container {
+    @include container();
+}
+
+.module-boxes_items-container {
+    @include flex(row);
+    margin-left: -20px;
+
+    @include media("<=tablet-custom") {
+        flex-wrap: wrap;
+    }
+
+    .module-boxes_item {
+        width: (100% / 3);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+
+        @include media("<=tablet-custom") {
+            width: 100%;
+        }
+    }
+
+    .module-boxes_item-inner {
+        border: 1px solid $black;
+        padding: 30px;
+        height: 100%;
+    }
+
+    @for $i from 1 through 3 {
+        .module-boxes_item:nth-child(3n + #{$i}) .module-boxes_item-inner {
+            background-color: rgba(0, 174, 239, $i * 10 + 50%);
+        }
+    }
+}
+
+footer {
+    border-top: 1px solid;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $black;
+}
+
+.nav--footer {
+    width: 100%;
+
+    ul {
+        @include listReset();
+        display: flex;
+        justify-content: center;
+    }
+
+    li {
+        margin: 5px 10px;
+    }
+
+    a {
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+            color: $brandColor;
+        }
+    }
+}
+
+.module_item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $black;
+}
+
+.module_item>*:first-child {
+    margin-top: 0;
+}
+
+.module_item>*:last-child {
+    margin-bottom: 0;
+}
+
+.module_date {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.module_headline {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.module-news {
+    background-color: $grey;
+}

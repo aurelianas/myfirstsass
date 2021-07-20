@@ -1,0 +1,36 @@
+{
+    "persons": [
+    {
+        "name": "Aurelian Stancu",
+        "gender": "male",
+        "age": 34,
+        "job": "Front-End Developer",
+        "thumbnail": [
+        {
+            "name": "Transfagarasan",
+            "url": "/images/Transfagarasan-Road-and-Medieval-City-of-Sibiu3.jpg"
+        },
+        {
+            "name": "b",
+            "url": "/none"
+        }]
+    },
+    {
+        "name": "Madalina Ianosi",
+        "gender": "female",
+        "age": 28,
+        "job": "QA Analyst"
+    },
+    {
+        "name": "Marian Stancu",
+        "gender": "male",
+        "age": 36,
+        "job": "Financial Analyst"
+    },
+    {
+        "name": "Elena Belciug",
+        "gender": "female",
+        "age": 83,
+        "job": "Retired"
+    }]
+}
