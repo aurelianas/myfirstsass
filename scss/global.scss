@@ -50,6 +50,9 @@ img {
     @include container();
 }
 
+
+/*====================HEADER====================*/
+
 .pane--header {
     background-color: $black;
     position: relative;
@@ -144,6 +147,46 @@ img {
     text-transform: uppercase;
 }
 
+/*==================END HEADER==================*/
+
+
+/*====================FOOTER====================*/
+
+footer {
+    border-top: 1px solid;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $black;
+}
+
+.nav--footer {
+    width: 100%;
+
+    ul {
+        @include listReset();
+        display: flex;
+        justify-content: center;
+    }
+
+    li {
+        margin: 5px 10px;
+    }
+
+    a {
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+            color: $brandColor;
+        }
+    }
+}
+
+/*==================END FOOTER==================*/
+
 main {
     flex: 1;
 }
@@ -188,39 +231,6 @@ main {
     @for $i from 1 through 3 {
         .module-boxes_item:nth-child(3n + #{$i}) .module-boxes_item-inner {
             background-color: rgba(0, 174, 239, $i * 10 + 50%);
-        }
-    }
-}
-
-footer {
-    border-top: 1px solid;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: $black;
-}
-
-.nav--footer {
-    width: 100%;
-
-    ul {
-        @include listReset();
-        display: flex;
-        justify-content: center;
-    }
-
-    li {
-        margin: 5px 10px;
-    }
-
-    a {
-        display: block;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $white;
-
-        &:hover {
-            color: $brandColor;
         }
     }
 }
