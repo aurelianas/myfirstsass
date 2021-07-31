@@ -38,14 +38,6 @@ a {
 img {
   max-width: 100%; }
 
-.pane_inner,
-.container {
-  max-width: 1100px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto; }
-
 /*====================HEADER====================*/
 .pane--header {
   background-color: black;
@@ -152,6 +144,14 @@ footer {
       color: #00aeef; }
 
 /*==================END FOOTER==================*/
+.pane_inner,
+.container {
+  max-width: 1100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto; }
+
 main {
   flex: 1; }
 

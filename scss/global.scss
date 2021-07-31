@@ -45,12 +45,6 @@ img {
     max-width: 100%;
 }
 
-.pane_inner,
-.container {
-    @include container();
-}
-
-
 /*====================HEADER====================*/
 
 .pane--header {
@@ -186,6 +180,11 @@ footer {
 }
 
 /*==================END FOOTER==================*/
+
+.pane_inner,
+.container {
+    @include container();
+}
 
 main {
     flex: 1;
